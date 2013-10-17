@@ -51,4 +51,5 @@ class HomeController < ApplicationController
     render :json => @events
   end
 
+
 end
