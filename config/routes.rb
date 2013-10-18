@@ -7,6 +7,8 @@ Chicageaux::Application.routes.draw do
   post '/tweets_supply' => 'home#tweet_fetcher'
   post '/eventful' => 'home#eventful_fetcher'
 
+  # post '/web_socket' => 'chat#initialize_session'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
