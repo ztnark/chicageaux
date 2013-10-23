@@ -114,7 +114,7 @@ $(document).ready(function(){
 
  var bikes = new WebSocketRails('localhost:3000/websocket');
 
-  bikes.trigger("events.bikes")
+  bikes.trigger("events.bikes");
 
   bikes.bind("events.success", function(message){
     $.each(message.stationBeanList,function(index, value){
@@ -122,7 +122,6 @@ $(document).ready(function(){
       bikeMarker(value.latitude, value.longitude, map, value.availableBikes);
     })
   })
-
 
 
   $(document).on("click","#item",function(){
