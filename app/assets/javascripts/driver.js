@@ -8,14 +8,6 @@ $(document).ready(function(){
 
 // ////////EVENTFUL/////////////////////////////////////
 
-  var eventful = new WebSocketRails('localhost:3000/websocket');
-
-  eventful.trigger("events.eventful")
-
-  setInterval(function(){
-    eventful.trigger("events.eventful")
-  },180000);
-
   // var eventful = new WebSocketRails('localhost:3000/websocket');
 
   // eventful.trigger("events.eventful")
@@ -23,21 +15,6 @@ $(document).ready(function(){
   // setInterval(function(){
   //   eventful.trigger("events.eventful")
   // },180000);
-
-  // // var eventful = new WebSocketRails('localhost:3000/websocket');
-
-  // // eventful.trigger("events.eventful")
-
-  // // setInterval(function(){
-  // //   eventful.trigger("events.eventful")
-  // // },180000);
-
-  // // eventful.bind("events.eventful_success", function(message){
-  // //   console.log(message);
-  // //   $.each(message, function(index, value){
-  // //     getMarker(value.latitude, value.longitude, map, value);
-  // //   });
-  // // })
 
   // eventful.bind("events.eventful_success", function(message){
   //   // console.log(message);
@@ -48,8 +25,8 @@ $(document).ready(function(){
 
 ////////TWEETS/////////////////////////////////////
 
-  // var tweets = new WebSocketRails('localhost:3000/websocket');
-  // tweets.trigger("events.tweets")
+  var tweets = new WebSocketRails('limitless-temple-4888.herokuapp.com/websocket');
+  tweets.trigger("events.tweets")
 
   tweets.bind("events.tweet_success", function(message){
     convertTweetsToMapObjects(message);
@@ -85,7 +62,6 @@ $(document).ready(function(){
 
   });
 
-
 // ////////TRAINS/////////////////////////////////////
   var trains = new WebSocketRails('localhost:3000/websocket');
 
@@ -101,10 +77,9 @@ $(document).ready(function(){
   })
 
 
-// // ////////PLANES/////////////////////////////////////
+///////////////////////////////////PLANES //////////////
 
-  var planes = new WebSocketRails('localhost:3000/websocket');
-//   var planes = new WebSocketRails('localhost:3000/websocket');
+  var planes = new WebSocketRails('limitless-temple-4888.herokuapp.com/websocket');
 
   planes.bind("events.success", function(message){
     // console.log(message);
@@ -117,7 +92,7 @@ $(document).ready(function(){
 
 // // ////////BIKES/////////////////////////////////////
 
- var bikes = new WebSocketRails('localhost:3000/websocket');
+ var bikes = new WebSocketRails('limitless-temple-4888.herokuapp.com/websocket');
 
   bikes.trigger("events.bikes");
 
