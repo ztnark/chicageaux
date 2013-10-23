@@ -23,6 +23,7 @@ $(document).ready(function(){
   //   });
   // })
 
+
 ////////TWEETS/////////////////////////////////////
 
   var tweets = new WebSocketRails('limitless-temple-4888.herokuapp.com/websocket');
